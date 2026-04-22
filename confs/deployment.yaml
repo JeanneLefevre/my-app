@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-app
+  name: playground
   namespace: dev
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx-app
+      app: playground
   template:
     metadata:
       labels:
-        app: nginx-app
+        app: playground
     spec:
       containers:
-        - name: nginx
-          image: nginx:latest
+        - name: app
+          image: wil42/playground:v2
           ports:
             - containerPort: 80
